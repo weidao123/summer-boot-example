@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "summer-boot": "^0.2.9"
+    "summer-boot": "^0.2.91"
   }
 }

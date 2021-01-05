@@ -672,10 +672,10 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-summer-boot@^0.2.9:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/summer-boot/-/summer-boot-0.2.9.tgz#c843025f5e60d69eaff269adf7b6b5f6d8ab5b7f"
-  integrity sha512-10GCktlYIxiAYdGde9K3bcJkzW+k/e8EXZAQZbsL29L62l2wP0t0abRU5tkRyj4wdikAMXHYmAb3iczzWVNoeg==
+summer-boot@^0.2.91:
+  version "0.2.91"
+  resolved "https://registry.yarnpkg.com/summer-boot/-/summer-boot-0.2.91.tgz#6e5dbe6efd7cfa95d05f87308e817fd542a89f5c"
+  integrity sha512-zCS5xl56HwLUNix8hg2lJkJ45JHHAKGRXY2Ay756bPqJ1sfPqKAb5QNHsOrAN95OyWILE58Cl6FB2BLmcJEwJA==
   dependencies:
     "@types/express" "^4.17.9"
     body-parser "^1.19.0"
