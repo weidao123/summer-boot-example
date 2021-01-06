@@ -190,7 +190,7 @@ cross-env@^7.0.2:
   dependencies:
     cross-spawn "^7.0.1"
 
-cross-spawn@^7.0.1:
+cross-spawn@^7.0.1, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
@@ -672,15 +672,16 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-summer-boot@^0.2.91:
-  version "0.2.91"
-  resolved "https://registry.yarnpkg.com/summer-boot/-/summer-boot-0.2.91.tgz#6e5dbe6efd7cfa95d05f87308e817fd542a89f5c"
-  integrity sha512-zCS5xl56HwLUNix8hg2lJkJ45JHHAKGRXY2Ay756bPqJ1sfPqKAb5QNHsOrAN95OyWILE58Cl6FB2BLmcJEwJA==
+summer-boot@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/summer-boot/-/summer-boot-0.3.0.tgz#f8c231d151e4836551ddf6edc92b535b8f9f9964"
+  integrity sha512-O4RBFcQ7CK+b2P7Hk0YiM8dSAucbk805y4XZh0FITIrZnxHK69Nnqx9V/OXKwIfdQ7tsSMeCwKrAwPb8esxP4Q==
   dependencies:
     "@types/express" "^4.17.9"
     body-parser "^1.19.0"
     chalk "^4.1.0"
     cross-env "^7.0.2"
+    cross-spawn "^7.0.3"
     express "^4.17.1"
     ip "^1.1.5"
     memory-fs "^0.5.0"
