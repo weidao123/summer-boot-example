@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "summer-dev dev",
+    "dev": "summer-bin dev",
     "build": "summer-bin build",
     "start": "summer-bin start"
   },
@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "summer-boot": "^0.2.9"
+    "summer-boot": "^0.3.0"
   }
 }
