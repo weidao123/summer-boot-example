@@ -1,4 +1,4 @@
-import {Autowrite, Body, Controller, Delete, Get, PathVariable, Post} from "summer-boot";
+import {Autowrite, Body, Controller, Delete, Env, Get, PathVariable, Post} from "summer-boot";
 import UserService from "../service/user";
 import User from "../entity/user";
 
@@ -7,6 +7,13 @@ export default class UserController {
 
     @Autowrite()
     private user: UserService;
+
+    @Get("/env")
+    public env() {
+        return {
+            env: Env.env
+        }
+    }
 
     @Get("/list")
     public async list() {

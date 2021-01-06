@@ -1,6 +1,5 @@
 import {Connection, createConnection} from "typeorm";
-import {Component, Logger} from "summer-boot";
-import {Env} from "summer-boot/dist/util";
+import {Component, Env, Logger} from "summer-boot";
 
 const path = require("path");
 
@@ -15,7 +14,7 @@ export default class DB {
 
     private async init() {
         try {
-            const entityDir = process.env.NODE_ENV === "development" ? "../entity/*.ts" : "../entity/*.js";
+            const entityDir = Env.isDevelopment ? "../entity/*.ts" : "../entity/*.js";
             this.connection = await createConnection({
                 type: "mysql",
                 host: "host",
