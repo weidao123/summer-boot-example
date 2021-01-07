@@ -1,18 +1,18 @@
 import {Autowrite, Service} from "summer-boot";
-import DB from "../config/db";
+import DBConnection from "../config/db-connection";
 import User from "../entity/user";
 
 @Service()
 export default class UserService {
 
     @Autowrite()
-    private db: DB;
+    private connection: DBConnection;
 
     /**
      * 列表
      */
     public async getList() {
-        return await this.db.connection.getRepository(User).findAndCount();
+        return await this.connection.getRepository(User).findAndCount();
     }
 
     /**
@@ -21,7 +21,7 @@ export default class UserService {
      */
     public async save(user: User) {
         try {
-            return await this.db.connection.manager.save(user);
+            return await this.connection.manager.save(user);
         } catch (e) {
             console.error(e);
             return e;
@@ -34,7 +34,7 @@ export default class UserService {
      */
     public async getOne(name: string) {
         try {
-            return this.db.connection.getRepository(User).findOne({username: name});
+            return await this.connection.getRepository(User).findOne({username: name});
         } catch (e) {
             return e;
         }
@@ -46,9 +46,9 @@ export default class UserService {
      */
     public async remove(id: number) {
         try {
-            const user = this.db.connection.getRepository(User);
+            const user = await this.connection.getRepository(User);
             const one = await user.findOne({id});
-            return await this.db.connection.getRepository(User).remove(one);
+            return await this.connection.getRepository(User).remove(one);
         } catch (e) {
             return e;
         }

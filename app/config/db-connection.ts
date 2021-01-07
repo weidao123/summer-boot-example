@@ -4,9 +4,9 @@ import {Component, Env, Logger} from "summer-boot";
 const path = require("path");
 
 @Component()
-export default class DB {
+export default class DBConnection {
 
-    public connection: Connection;
+    private connection: Connection;
 
     constructor() {
         this.init();
@@ -39,4 +39,15 @@ export default class DB {
         return this.connection;
     }
 
+    public get manager() {
+        return this.connection.manager;
+    }
+
+    public get getRepository () {
+        return this.connection.getRepository;
+    }
+
+    public get query() {
+        return this.connection.query;
+    }
 }
