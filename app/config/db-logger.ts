@@ -49,7 +49,7 @@ export default class DBLogger implements Logger {
      * @param queryRunner
      */
     logQuerySlow(time: number, query: string, parameters?: any[], queryRunner?: QueryRunner): any {
-        SummerLogger.warn(String(time) + query);
+        SummerLogger.warn(`${time}ms => ${time}`);
     }
 
     /**

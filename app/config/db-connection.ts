@@ -18,7 +18,7 @@ export default class DBConnection {
             const entityDir = Env.isDevelopment ? "../entity/*.ts" : "../entity/*.js";
             this.connection = await createConnection({
                 type: "mysql",
-                host: "101.200.187.240",
+                host: "",
                 port: 3306,
                 username: "",
                 password: "",
@@ -26,6 +26,7 @@ export default class DBConnection {
                 entities: [path.resolve(__dirname, entityDir)],
                 synchronize: true,
                 logger: new DBLogger(),
+                maxQueryExecutionTime: 1,
             });
             Logger.info("db init success");
         } catch (e) {
