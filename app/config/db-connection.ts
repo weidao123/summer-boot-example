@@ -1,5 +1,6 @@
 import {Connection, createConnection} from "typeorm";
 import {Component, Env, Logger} from "summer-boot";
+import DBLogger from "./db-logger";
 
 const path = require("path");
 
@@ -17,14 +18,14 @@ export default class DBConnection {
             const entityDir = Env.isDevelopment ? "../entity/*.ts" : "../entity/*.js";
             this.connection = await createConnection({
                 type: "mysql",
-                host: "host",
+                host: "101.200.187.240",
                 port: 3306,
                 username: "root",
-                password: "password",
+                password: "wx1369583340wx",
                 database: "study",
                 entities: [path.resolve(__dirname, entityDir)],
                 synchronize: true,
-                logging: false,
+                logger: new DBLogger(),
             });
             Logger.info("db init success");
         } catch (e) {
@@ -40,14 +41,14 @@ export default class DBConnection {
     }
 
     public get manager() {
-        return this.connection.manager;
+        return this.connection && this.connection.manager;
     }
 
     public get getRepository () {
-        return this.connection.getRepository;
+        return this.connection && this.connection.getRepository;
     }
 
     public get query() {
-        return this.connection.query;
+        return this.connection && this.connection.query;
     }
 }
