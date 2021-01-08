@@ -1,4 +1,4 @@
-import {Autowrite, Body, Controller, Delete, Env, Get, PathVariable, Post} from "summer-boot";
+import {Autowrite, Body, Controller, Delete, Env, Get, ParamType, PathVariable, Post} from "summer-boot";
 import UserService from "../service/user";
 import User from "../entity/user";
 
@@ -22,9 +22,7 @@ export default class UserController {
     }
 
     @Post("/save")
-    public async save(@Body u: User) {
-        const user = new User();
-        Object.assign(user, u);
+    public async save(@Body({type: ParamType.entity, entity: User}) user: User) {
         user.update_time = new Date();
         return await this.user.save(user);
     }
@@ -35,7 +33,7 @@ export default class UserController {
     }
 
     @Delete("/:id")
-    public async remove(@PathVariable("id") id: string) {
-        return await this.user.remove(Number(id));
+    public async remove(@PathVariable("id", ParamType.number) id: number) {
+        return await this.user.remove(id);
     }
 }

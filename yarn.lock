@@ -1073,10 +1073,10 @@ strip-ansi@^6.0.0:
   dependencies:
     ansi-regex "^5.0.0"
 
-summer-boot@^0.3.14:
-  version "0.3.14"
-  resolved "https://registry.yarnpkg.com/summer-boot/-/summer-boot-0.3.14.tgz#2acd67e5b9bc6125896fe0d840f98f284dd95ae7"
-  integrity sha512-dRsdHOZkEDq0gFDk4EqKOKiLBTf3Tjev7BYFVL3WxmJ3NcFJTb4SyuPUMdODgOZZmTK3dqRJSsyrQ51yP8lkaA==
+summer-boot@^0.3.15:
+  version "0.3.15"
+  resolved "https://registry.yarnpkg.com/summer-boot/-/summer-boot-0.3.15.tgz#151df2ad255c4dcbc5053c0717121a3a58a6704d"
+  integrity sha512-X+B79N4nA2H8ySlZSdqgq8++myfZ/CU/FwDYHbyM6TDBUfWc1KkBcw9Z14TbdseG30fPw00RE5NZGtGg7ZrX9A==
   dependencies:
     "@types/express" "^4.17.9"
     body-parser "^1.19.0"
