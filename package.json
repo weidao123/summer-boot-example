@@ -4,17 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "summer-bin dev",
     "build": "summer-bin build",
-    "start": "summer-bin start"
+    "start": "summer-bin start",
+    "test": "summer-bin test",
+    "pre": "summer-bin pre"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "mysql": "^2.18.1",
-    "summer-boot": "^0.3.13",
+    "summer-boot": "^0.3.14",
     "typeorm": "^0.2.29"
   }
 }
