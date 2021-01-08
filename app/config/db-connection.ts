@@ -1,5 +1,5 @@
 import {Connection, createConnection} from "typeorm";
-import {Component, Env, Logger} from "summer-boot";
+import {Component, Env, Logger, sendMessage, WorkerMessageType} from "summer-boot";
 import DBLogger from "./db-logger";
 
 const path = require("path");
@@ -31,6 +31,10 @@ export default class DBConnection {
             Logger.info("db init success");
         } catch (e) {
             Logger.error(e);
+            sendMessage({
+                type: WorkerMessageType.START_FAIL,
+                data: null,
+            });
         }
     }
 
