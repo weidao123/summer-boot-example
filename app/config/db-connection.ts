@@ -31,10 +31,10 @@ export default class DBConnection {
             Logger.info("db init success");
         } catch (e) {
             Logger.error(e);
-            sendMessage({
-                type: WorkerMessageType.START_FAIL,
-                data: null,
-            });
+            // sendMessage({
+            //     type: WorkerMessageType.START_FAIL,
+            //     data: null,
+            // });
         }
     }
 
