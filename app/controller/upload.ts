@@ -1,4 +1,4 @@
-import {Controller, Multipart, Post, Req, SummerDate} from "summer-boot";
+import {Controller, Post, Multipart, Req } from "summer-boot";
 import {throwError} from "../util/throw-error";
 
 const path = require("path");
@@ -15,7 +15,7 @@ export default class UploadController {
         if (!multipart.hasFile("file")) {
             throwError("文件不存在", 2);
         }
-        await multipart.save(f => `${SummerDate.currentDate()}-${f.originName}`);
+        await multipart.save(f => `${Date.now()}-${f.originName}`);
         return "success";
     }
 }
